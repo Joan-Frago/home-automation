@@ -1,13 +1,16 @@
-document.getElementById("encendrecaldera-btn").addEventListener("click", function() {
+// Función para ejecutar la función PHP mediante AJAX
+function encendreCaldera() {
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "../api/index.php", true);
+    xhr.open("POST", "api/index.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+    // Definir la función que procesa la respuesta
     xhr.onreadystatechange = function() {
         if (xhr.readyState === 4 && xhr.status === 200) {
-            // Display the output from the response in the output div
-            document.getElementById("output-content").textContent = xhr.responseText;
+            document.getElementById("result").innerHTML = xhr.responseText;
         }
     };
-    // Send the request
-    xhr.send();
-});
+
+    // Enviar la solicitud con el parámetro 'accion' que indica la función a ejecutar en PHP
+    xhr.send("action=controlcaldera");
+}

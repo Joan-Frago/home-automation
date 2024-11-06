@@ -1,5 +1,8 @@
+import random
+
 def test():
-    return "This comes from a python script"
+    randomNum = random.randint(1,1000)
+    return f"Random Number from a Python script: {randomNum}"
 
 if __name__ == "__main__":
     print(test())

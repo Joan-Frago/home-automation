@@ -1,10 +1,22 @@
 <?php
+$estatCaldera = "OFF";
 
-function EncendreCaldera() {
-    $scriptPath = "../code/pyt/encendrecaldera.py";
-    $output = shell_exec("python3 " . escapeshellarg($scriptPath));
+function EstatCaldera() {
+    return $estatCaldera;
+};
 
-    echo $output;
-}
+function ControlCaldera() {
+    $estatCaldera = EstatCaldera();
+    if ($estatCaldera == "ON") {
+        echo "La caldera està encesa";
+    }
+    elseif ($estatCaldera == "OFF") {
+        $scriptPath = "../code/pyt/encendrecaldera.py";
+        $output = shell_exec("python3 " . escapeshellarg($scriptPath));
+
+        echo $output;
+    };
+    
+};
 
 ?>

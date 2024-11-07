@@ -1,25 +1,30 @@
 <?php
 
 function EstatCaldera() {
-    $estatCaldera = "OFF";
-    return $estatCaldera;
-};
-
-function ControlCaldera() {
-    $estatCaldera = EstatCaldera();
-    if ($estatCaldera == "ON") {
-        echo "La caldera està encesa";
-    }
-    elseif ($estatCaldera == "OFF") {
-        $output = shell_exec("python3 ../code/pyt/encendrecaldera.py 2>&1");
-        echo("<pre>$output</pre>");
-    };
-};
-
-// Verificar si se ha solicitado esta función (por ejemplo, mediante AJAX)
-if (isset($_POST['action']) && $_POST['action'] === 'controlcaldera') {
-    // Llamar a la función y devolver el resultado
-    echo ControlCaldera();
+    // Executes the Python script to get the boiler status
+    $estatCaldera = trim(shell_exec("python3 ../code/pyt/estatCaldera.py")); 
+    return $estatCaldera; // Return the value instead of echoing
 }
 
+function ControlCaldera() {
+    // Call EstatCaldera and capture the returned value
+    $estatCaldera = EstatCaldera();
+
+    if ($estatCaldera === "ON") {
+        echo "La caldera està encesa";
+    } elseif ($estatCaldera === "OFF") {
+        // Only execute encendreCaldera.py if the boiler is off
+        $output = shell_exec("python3 ../code/pyt/encendreCaldera.py");
+        echo $output ? $output : "Error al encender la caldera";
+    }
+}
+
+// Check for 'action' parameter consistently across requests
+if (isset($_POST['action'])) {
+    if ($_POST['action'] === 'controlCaldera') {
+        ControlCaldera();
+    } elseif ($_POST['action'] === 'getEstatCaldera') {
+        echo EstatCaldera();
+    }
+}
 ?>

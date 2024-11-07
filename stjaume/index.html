@@ -8,11 +8,17 @@
     </head>
 
     <body>
-        <script src="js/stjaume.js"></script>
+        <script src="js/stjaume.js?v=1.0"></script>
         <h1>Sant Jaume de Frontanyà</h1>
+
+        <div id="estatCaldera">
+            <p>Estat de la Caldera: <span id="estat-caldera"></span></p>
+        </div>
+
         <div>
             <div id="result"></div>
-                <button onclick="encendreCaldera()" id="encendrecaldera-btn">ON / OFF</button>
+            <button onclick="callEncendreCaldera()" id="encendrecaldera-btn">ON / OFF</button>
         </div>
+        
     </body>
 </html>

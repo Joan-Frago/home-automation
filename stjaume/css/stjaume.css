@@ -2,10 +2,12 @@ body {
     max-width: max-content;
     margin: auto;
     background-color: #4b4b4b;
+    background-image: url(../media/F05-Sant-Jaume-de-Frontanyà.jpg);
+    background-size: cover; /* Scales the image to cover the entire screen */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
 }
-h1, p {
-    color: white;
-}
+h1 { color: #000; }
+p { color: #fff; }
 div {
     text-align: center;
 }

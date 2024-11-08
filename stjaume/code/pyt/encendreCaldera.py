@@ -1,3 +1,5 @@
+# if there's something to output, it has to be printed
+
 import random
 import sys
 

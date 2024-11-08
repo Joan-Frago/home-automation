@@ -13,9 +13,9 @@ function ControlCaldera() {
     if ($estatCaldera === "ON") {
         echo "La caldera està encesa";
     } elseif ($estatCaldera === "OFF") {
-        // Only execute encendreCaldera.py if the boiler is off
+        // Only execute encendreCaldera.py if it's off
         $output = shell_exec("python3 ../code/pyt/encendreCaldera.py");
-        echo $output ? $output : "Error al encender la caldera";
+        echo $output ? $output : "Error al encendre la caldera";
     }
 }
 

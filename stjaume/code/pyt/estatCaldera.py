@@ -2,9 +2,10 @@
 
 import sys
 
-from stjaumeUtils import getEstatCaldera
+from stjaumeUtils import *
 
 if __name__ == "__main__":
-    print(getEstatCaldera())
+    ipin = 24
+    print(getEstatCaldera(ipin))
 
     sys.exit()

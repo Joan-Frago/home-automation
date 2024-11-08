@@ -4,11 +4,29 @@
 # If there is, return "ON"
 # If there isn't, return "OFF"
 
-estatCaldera = True
+# import raspberry pi's module
+try:
+    import RPi.GPIO as GPIO
+except Exception as e:
+    print(e)
 
-def getEstatCaldera():
-    if not estatCaldera:
-        return "ON"
-    else:
-        return "OFF"
+def getEstatCaldera(apin):
+    try:
+        # Set the pin as input
+        GPIO.setup(apin, GPIO.IN)
 
+        # read the pin
+        estatCaldera = GPIO.input(apin)
+
+        if not estatCaldera:
+            return "OFF"
+        else:
+            return "ON"
+    except Exception:
+        # for testing purposes
+        estatCaldera = False
+
+        if not estatCaldera:
+            return "OFF"
+        else:
+            return "ON"

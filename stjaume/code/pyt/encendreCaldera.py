@@ -1,10 +1,8 @@
 # if there's something to output, it has to be printed
 
 # import raspberry pi's module
-try:
-    import RPi.GPIO as GPIO
-except Exception as e:
-    print(e)
+import RPi.GPIO as GPIO
+
 
 # import modules
 import random

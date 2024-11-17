@@ -11,20 +11,22 @@ function ControlCaldera() {
     $estatCaldera = EstatCaldera();
 
     if ($estatCaldera === "ON") {
-        echo "La caldera està encesa";
+        return "La caldera està encesa";
     } elseif ($estatCaldera === "OFF") {
         // Only execute encendreCaldera.py if it's off
         $output = shell_exec("python3 ../code/pyt/encendreCaldera.py");
-        echo $output ? $output : "Error al encendre la caldera";
+        return $output ? $output : "Error al encendre la caldera";
     }
 }
 
 // Check for 'action' parameter consistently across requests
 if (isset($_POST['action'])) {
     if ($_POST['action'] === 'controlCaldera') {
-        ControlCaldera();
-    } elseif ($_POST['action'] === 'getEstatCaldera') {
+        echo ControlCaldera();
+    }
+    if ($_POST['action'] === 'getEstatCaldera') {
         echo EstatCaldera();
     }
 }
+
 ?>

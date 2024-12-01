@@ -1,5 +1,4 @@
 # Sant Jaume Project
 All the development made will be done in this repository.
-It will be implemented in a virtual machine simulating a raspberry pi.
 
-The idea is to code the UI in php, css and js, and the backend with python.
+EVERYTHING IS EXECUTED IN A UNIPI (raspberry pi), BE CAREFUL WITH WHAT YOU EXECUTE

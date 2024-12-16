@@ -16,5 +16,5 @@ Python files will call the API to insert values and javascript will call the API
 
 ## Git branches
 1. There is a **main** branch, where the stable version of the platform is
-2. There is a **stjaume-dev** branch, where the developing of new versions is made
-3. There is a **test** branch, where all the testing is made
+2. There is a **stjaume-dev** branch, where the developing of new versions is done
+3. There is a **test** branch, where all the testing is done

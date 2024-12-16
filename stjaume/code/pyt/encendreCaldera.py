@@ -4,7 +4,8 @@
 try:
     import RPi.GPIO as GPIO
 except Exception as e:
-    print(e)
+    pass
+    # print(e)
 
 # import modules
 import random
@@ -31,7 +32,8 @@ if __name__ == "__main__":
         # Give current to the pin
         onCaldera(ipin)
     except Exception as e:
-        print(e)
+        pass
+        # print(e)
 
     # test function to ensure it is working properly
     test()

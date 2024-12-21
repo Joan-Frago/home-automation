@@ -22,4 +22,4 @@ rad.json
 TestResults.xml
 
 #Python config files
-stjaume/config/config.py
+stjaume/config/*

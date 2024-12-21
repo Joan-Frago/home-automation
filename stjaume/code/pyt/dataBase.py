@@ -1,11 +1,12 @@
-#!/usr/bin/env python3
+from dataBase import mySqlHost
+from dataBase import mySqlUser
+from dataBase import mySqlPassword
 
 import mysql.connector
 
 Db = mysql.connector.connect(
-    host="100.116.80.15",
-    user="joan",
-    password="2126"
+    host=mySqlHost,
+    user=mySqlUser,
+    password=mySqlPassword
 )
 
-print(Db)
